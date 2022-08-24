@@ -14,6 +14,8 @@ int main()
     /* draw a lil box :D */
     TGAFillColor(&tga, WIDTH / 2 - (BOXSIZE / 2), HEIGHT / 2 - (BOXSIZE / 2), BOXSIZE, BOXSIZE,
                  TGACOLOR(100, 100, 100));
+
+    /* write to file */
     if ((err = TGADumpFile(&tga, "out.tga")) != TGA_OK) {
         printf("Failed to write TGA file! [%s]\n", TGAError2Str(err));
         return 1;

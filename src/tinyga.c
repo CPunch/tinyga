@@ -52,7 +52,6 @@ TGA TGANew(int width, int height, TGAColor background)
 
     /* write background */
     TGAFillColor(&tga, 0, 0, width, height, background);
-
     return tga;
 }
 
@@ -69,7 +68,7 @@ TGAErrorCode TGADumpFile(TGA *tga, const char *outPath)
     size_t sz = sizeof(TGAColor) * tga->width * tga->height;
     TGAErrorCode err = TGA_OK;
 
-    /* TODO: return value is a bit ambiguous */
+    /* open file */
     if ((out = fopen(outPath, "wb")) == NULL)
         return TGA_ERR_FOPEN;
 
